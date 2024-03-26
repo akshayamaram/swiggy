@@ -27,9 +27,11 @@ const RestaurentMenu = () => {
     avgRating,
     totalRatingsString,
     sla,
-  } = resInfo?.cards[0]?.card?.card?.info;
-  const { itemCards } =
-    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
+  } = resInfo?.cards[2]?.card?.card?.info;
+
+  // const { itemCards } = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
+
+
   /**
    * ? swiggy keeps on changing the data structure so make sure  to check it out before using this code     like in the above example after REGULAR, it maybe cards[2] or cards[1] or cards[3] so keep an eye on it and then update the data structure for your self accordingly
    */
@@ -38,7 +40,7 @@ const RestaurentMenu = () => {
   //  console.log(resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
 
   const itemCategories =
-    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
       (c) =>
         c.card?.card?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
